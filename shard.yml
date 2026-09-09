@@ -1,0 +1,20 @@
+name: crystalkv
+version: 0.0.1
+description: |
+  A lightweight key-value store server built with Crystal.
+  Supports SET, GET commands over TCP with concurrent connections.
+
+authors:
+  - mohammadmehdisharife <mohammadmehdisharife@gmail.com>
+
+license: Apache-2.0
+
+targets:
+  crystalkv:
+    main: src/main.cr
+
+development_dependencies:
+
+crystal: ">= 1.0.0"
+
+repository: https://github.com/mohammadmehdisharife/CrystalKV
