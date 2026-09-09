@@ -1,1 +1,3 @@
-puts "Hello World"
+require "./storage"
+
+store = Storage.new

@@ -2,19 +2,15 @@ TARGET = crystalkv
 SRC = src/main.cr
 BUILD_OPTS = --release --link-flags="-s -Wl,--gc-sections"
 
-all: build
+all: $(TARGET)
 
-build:
+$(TARGET): $(SRC)
 	crystal build $(SRC) $(BUILD_OPTS) -o $(TARGET)
 
-run: build
+run: $(TARGET)
 	./$(TARGET)
-
-debug:
-	crystal build $(SRC) -o $(TARGET)
 
 clean:
 	rm -f $(TARGET)
-	rm -rf .crystal/
 
-.PHONY: all build run debug clean
+.PHONY: all run clean
