@@ -1,3 +1,5 @@
+require "./server"
 require "./storage"
 
-store = Storage.new
+server = Server.new()
+server.run
