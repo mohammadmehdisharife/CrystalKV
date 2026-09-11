@@ -44,7 +44,18 @@ def command_run(command : String) : String
 
     storage.delete(key)
     return "OK"
+  
+  when "EXP"
+    key = words[1]?
+    ttl_str = words[2]?
 
+    return "ERR missing key" if key.nil?
+    return "ERR missing exp time" if ttl_str.nil?
+    
+    exp_time = ttl_str.not_nil!.to_i.seconds
+    storage.exp(key.not_nil!, exp_time)
+
+    return "OK"
   else
     return "ERR unknown command"
   end
